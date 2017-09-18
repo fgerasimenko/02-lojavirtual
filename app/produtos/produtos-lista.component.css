@@ -1,0 +1,19 @@
+.card-body span{
+    font-size: 30px;
+    text-align: center;
+}
+.card-body span b{
+    margin-right: 5px;
+}
+
+.card-body span small{
+    font-size: 20px;
+    margin-right: 10px;
+    position: absolute;
+    bottom: 73px;
+}
+
+.card-body .btn.btn-primary{
+    /* float: right; */
+    width: 95%;
+}
