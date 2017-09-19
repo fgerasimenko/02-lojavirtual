@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+
+import { Location } from '@angular/common';
+
+import { Produto } from './produto.model';
+import { ProdutoService } from './produto.service';
 
 @Component({
     moduleId: module.id,
@@ -7,7 +13,14 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./produto-detalhe.component.css']
 })
 export class ProdutoDetalheComponent implements OnInit {
-    constructor() { }
+    produto: Produto;
 
-    ngOnInit() { }
+    constructor(
+        private produtoService: ProdutoService,
+       
+    ) { }
+
+    ngOnInit(): void {
+        this.produtoService.find
+    }
 }

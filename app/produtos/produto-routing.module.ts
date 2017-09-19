@@ -5,8 +5,18 @@ import { ProdutosListaComponent } from './produtos-lista.component';
 import { ProdutoDetalheComponent } from './produto-detalhe.component';
 
 const produtoRoutes: Routes = [
-    { path: 'produtos', component: ProdutosListaComponent },
-    { path: 'produtos/detalhe', component: ProdutoDetalheComponent }
+    { 
+        path: 'produtos', 
+        component: ProdutosListaComponent 
+    },
+    { 
+        path: 'produtos/detalhe', 
+        component: ProdutoDetalheComponent 
+    },
+    { 
+        path: 'produtos/detalhe/:id', 
+        component: ProdutoDetalheComponent 
+    }
 ];
 
 @NgModule({

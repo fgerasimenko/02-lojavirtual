@@ -9,9 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require("@angular/core");
+const produto_service_1 = require("./produto.service");
 let ProdutoDetalheComponent = class ProdutoDetalheComponent {
-    constructor() { }
-    ngOnInit() { }
+    constructor(produtoService) {
+        this.produtoService = produtoService;
+    }
+    ngOnInit() {
+        this.produtoService.find;
+    }
 };
 ProdutoDetalheComponent = __decorate([
     core_1.Component({
@@ -20,7 +25,7 @@ ProdutoDetalheComponent = __decorate([
         templateUrl: './produto-detalhe.component.html',
         styleUrls: ['./produto-detalhe.component.css']
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [produto_service_1.ProdutoService])
 ], ProdutoDetalheComponent);
 exports.ProdutoDetalheComponent = ProdutoDetalheComponent;
 //# sourceMappingURL=produto-detalhe.component.js.map

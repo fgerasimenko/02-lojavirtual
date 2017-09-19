@@ -10,6 +10,7 @@ const common_1 = require("@angular/common");
 const produtos_lista_component_1 = require("./produtos-lista.component");
 const produto_detalhe_component_1 = require("./produto-detalhe.component");
 const produto_routing_module_1 = require("./produto-routing.module");
+const produto_service_1 = require("./produto.service");
 let ProdutosModule = class ProdutosModule {
 };
 ProdutosModule = __decorate([
@@ -19,14 +20,16 @@ ProdutosModule = __decorate([
             produto_detalhe_component_1.ProdutoDetalheComponent
         ],
         imports: [
-            common_1.CommonModule
+            common_1.CommonModule,
+            produto_routing_module_1.ProdutoRoutingModule
         ],
         exports: [
             produtos_lista_component_1.ProdutosListaComponent,
             produto_detalhe_component_1.ProdutoDetalheComponent,
-            produto_routing_module_1.ProdutoRoutingModule
         ],
-        providers: [],
+        providers: [
+            produto_service_1.ProdutoService
+        ]
     })
 ], ProdutosModule);
 exports.ProdutosModule = ProdutosModule;

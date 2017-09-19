@@ -10,8 +10,18 @@ const router_1 = require("@angular/router");
 const produtos_lista_component_1 = require("./produtos-lista.component");
 const produto_detalhe_component_1 = require("./produto-detalhe.component");
 const produtoRoutes = [
-    { path: 'produtos', component: produtos_lista_component_1.ProdutosListaComponent },
-    { path: 'produtos/detalhe', component: produto_detalhe_component_1.ProdutoDetalheComponent }
+    {
+        path: 'produtos',
+        component: produtos_lista_component_1.ProdutosListaComponent
+    },
+    {
+        path: 'produtos/detalhe',
+        component: produto_detalhe_component_1.ProdutoDetalheComponent
+    },
+    {
+        path: 'produtos/detalhe/:id',
+        component: produto_detalhe_component_1.ProdutoDetalheComponent
+    }
 ];
 let ProdutoRoutingModule = class ProdutoRoutingModule {
 };

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Produto } from './produto.model';
-import { PRODUTOS } from './produtos-mock';
+import { ProdutoService } from './produto.service';
 
 
 @Component({
@@ -12,9 +12,16 @@ import { PRODUTOS } from './produtos-mock';
 })
 export class ProdutosListaComponent implements OnInit {
 
-    produtos: Produto[] = PRODUTOS;
-    getProdutos(){}
-    constructor() { }
+    produtos: Produto[];    
+    constructor(
+        private produtoService: ProdutoService
+    ) { }
 
-    ngOnInit() { }
+    ngOnInit(): void {
+        this.produtoService.getProdutos()
+            .then((produtos: Produto[]) => {
+                this.produtos = produtos;
+            })
+            .catch(err => console.log(err));
+     }
 }

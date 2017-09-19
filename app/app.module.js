@@ -10,7 +10,6 @@ const platform_browser_1 = require("@angular/platform-browser");
 const app_component_1 = require("./app.component");
 const produtos_module_1 = require("./produtos/produtos.module");
 const app_routing_module_1 = require("./app-routing.module");
-const carrinho_module_1 = require("./carrinho/carrinho.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -18,8 +17,7 @@ AppModule = __decorate([
         imports: [
             app_routing_module_1.AppRoutingModule,
             platform_browser_1.BrowserModule,
-            produtos_module_1.ProdutosModule,
-            carrinho_module_1.CarrinhoModule
+            produtos_module_1.ProdutosModule
         ],
         declarations: [
             app_component_1.AppComponent
