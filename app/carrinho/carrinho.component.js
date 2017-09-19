@@ -9,22 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require("@angular/core");
-const produtos_mock_1 = require("./produtos-mock");
-let ProdutosListaComponent = class ProdutosListaComponent {
-    constructor() {
-        this.produtos = produtos_mock_1.PRODUTOS;
-    }
-    getProdutos() { }
+let CarrinhoComponent = class CarrinhoComponent {
+    constructor() { }
     ngOnInit() { }
 };
-ProdutosListaComponent = __decorate([
+CarrinhoComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'produtos-lista',
-        templateUrl: './produtos-lista.component.html',
-        styleUrls: ['./produtos-lista.component.css']
+        selector: 'carrinho',
+        templateUrl: './carrinho.component.html'
     }),
     __metadata("design:paramtypes", [])
-], ProdutosListaComponent);
-exports.ProdutosListaComponent = ProdutosListaComponent;
-//# sourceMappingURL=produtos-lista.component.js.map
+], CarrinhoComponent);
+exports.CarrinhoComponent = CarrinhoComponent;
+//# sourceMappingURL=carrinho.component.js.map

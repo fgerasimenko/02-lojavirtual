@@ -1,13 +1,14 @@
-<div class="container">
+<div class="container listar-produtos">
     <div class="row">
         <!-- CARDS DE PRODUTOS -->
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" *ngFor="let p of produtos">
             <div class="card">
-                <img class="card-img-top" src="produto.imageUrl" alt="produto.nome">
+                <img class="card-img-top" src="{{p.imageUrl}}" alt="{{p.nome}}">
                 <div class="card-body">
-                    <h4 class="card-title">Nome do Produto</h4>
-                    <p class="card-text">Descrição do Produto</p>
-                    <span><b>R$</b>2.221.500,<small>00</small></span><a href="#" class="btn btn-primary"><i class="material-icons">shopping_cart</i></a>
+                    <h4 class="card-title">{{p.nome}}</h4>
+                    <p class="card-text">{{p.descShort}}</p>
+                    <p><a routerLink="/produtos/detalhe">Ver mais...</a></p>
+                    <span><b>R$</b>{{p.preco}},<small>{{p.precoCentavos}}</small></span><button class="btn btn-primary"><i class="material-icons">shopping_cart</i></button>
                 </div>
             </div>
         </div>

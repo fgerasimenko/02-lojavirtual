@@ -3,11 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ProdutosModule } from './produtos/produtos.module';
+import { AppRoutingModule } from './app-routing.module';
+import { CarrinhoModule } from './carrinho/carrinho.module';
 
 @NgModule({
     imports: [
+        AppRoutingModule,
         BrowserModule,
-        ProdutosModule
+        ProdutosModule,
+        CarrinhoModule
     ],
     declarations: [
         AppComponent

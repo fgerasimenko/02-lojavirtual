@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Produto } from './produto.model';
+import { PRODUTOS } from './produtos-mock';
+
+
 @Component({
     moduleId: module.id,
     selector: 'produtos-lista',
@@ -7,6 +11,9 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./produtos-lista.component.css']
 })
 export class ProdutosListaComponent implements OnInit {
+
+    produtos: Produto[] = PRODUTOS;
+    getProdutos(){}
     constructor() { }
 
     ngOnInit() { }

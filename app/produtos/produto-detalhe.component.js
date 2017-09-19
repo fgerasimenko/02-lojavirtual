@@ -9,22 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require("@angular/core");
-const produtos_mock_1 = require("./produtos-mock");
-let ProdutosListaComponent = class ProdutosListaComponent {
-    constructor() {
-        this.produtos = produtos_mock_1.PRODUTOS;
-    }
-    getProdutos() { }
+let ProdutoDetalheComponent = class ProdutoDetalheComponent {
+    constructor() { }
     ngOnInit() { }
 };
-ProdutosListaComponent = __decorate([
+ProdutoDetalheComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'produtos-lista',
-        templateUrl: './produtos-lista.component.html',
-        styleUrls: ['./produtos-lista.component.css']
+        selector: 'produto-detalhe',
+        templateUrl: './produto-detalhe.component.html',
+        styleUrls: ['./produto-detalhe.component.css']
     }),
     __metadata("design:paramtypes", [])
-], ProdutosListaComponent);
-exports.ProdutosListaComponent = ProdutosListaComponent;
-//# sourceMappingURL=produtos-lista.component.js.map
+], ProdutoDetalheComponent);
+exports.ProdutoDetalheComponent = ProdutoDetalheComponent;
+//# sourceMappingURL=produto-detalhe.component.js.map

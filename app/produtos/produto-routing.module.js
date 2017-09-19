@@ -6,28 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 const core_1 = require("@angular/core");
-const common_1 = require("@angular/common");
+const router_1 = require("@angular/router");
 const produtos_lista_component_1 = require("./produtos-lista.component");
 const produto_detalhe_component_1 = require("./produto-detalhe.component");
-const produto_routing_module_1 = require("./produto-routing.module");
-let ProdutosModule = class ProdutosModule {
+const produtoRoutes = [
+    { path: 'produtos', component: produtos_lista_component_1.ProdutosListaComponent },
+    { path: 'produtos/detalhe', component: produto_detalhe_component_1.ProdutoDetalheComponent }
+];
+let ProdutoRoutingModule = class ProdutoRoutingModule {
 };
-ProdutosModule = __decorate([
+ProdutoRoutingModule = __decorate([
     core_1.NgModule({
-        declarations: [
-            produtos_lista_component_1.ProdutosListaComponent,
-            produto_detalhe_component_1.ProdutoDetalheComponent
-        ],
-        imports: [
-            common_1.CommonModule
-        ],
-        exports: [
-            produtos_lista_component_1.ProdutosListaComponent,
-            produto_detalhe_component_1.ProdutoDetalheComponent,
-            produto_routing_module_1.ProdutoRoutingModule
-        ],
-        providers: [],
+        imports: [router_1.RouterModule.forChild(produtoRoutes)],
+        exports: [router_1.RouterModule]
     })
-], ProdutosModule);
-exports.ProdutosModule = ProdutosModule;
-//# sourceMappingURL=produtos.module.js.map
+], ProdutoRoutingModule);
+exports.ProdutoRoutingModule = ProdutoRoutingModule;
+//# sourceMappingURL=produto-routing.module.js.map
