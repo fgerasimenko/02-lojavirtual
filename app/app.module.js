@@ -7,9 +7,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 const core_1 = require("@angular/core");
 const platform_browser_1 = require("@angular/platform-browser");
+const http_1 = require("@angular/http");
 const app_component_1 = require("./app.component");
+const carrinho_module_1 = require("./carrinho/carrinho.module");
 const produtos_module_1 = require("./produtos/produtos.module");
 const app_routing_module_1 = require("./app-routing.module");
+const carrinho_service_1 = require("./carrinho/carrinho.service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -17,13 +20,18 @@ AppModule = __decorate([
         imports: [
             app_routing_module_1.AppRoutingModule,
             platform_browser_1.BrowserModule,
-            produtos_module_1.ProdutosModule
+            http_1.HttpModule,
+            produtos_module_1.ProdutosModule,
+            carrinho_module_1.CarrinhoModule
         ],
         declarations: [
             app_component_1.AppComponent
         ],
         bootstrap: [
             app_component_1.AppComponent
+        ],
+        providers: [
+            carrinho_service_1.CarrinhoService
         ]
     })
 ], AppModule);

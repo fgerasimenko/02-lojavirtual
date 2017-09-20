@@ -13,7 +13,7 @@ let ProdutoService = class ProdutoService {
     }
     getProduto(id) {
         return this.getProdutos()
-            .then(response => );
+            .then((produtos) => produtos.find(produto => produto.id == id));
     }
 };
 ProdutoService = __decorate([

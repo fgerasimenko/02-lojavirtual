@@ -9,13 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require("@angular/core");
+const router_1 = require("@angular/router");
+const produto_model_1 = require("./produto.model");
 const produto_service_1 = require("./produto.service");
 let ProdutoDetalheComponent = class ProdutoDetalheComponent {
-    constructor(produtoService) {
+    constructor(produtoService, route) {
         this.produtoService = produtoService;
+        this.route = route;
+        this.produto = new produto_model_1.Produto(0, '', '', '', '', 0, 0, '');
     }
     ngOnInit() {
-        this.produtoService.find;
+        this.route.params.forEach((params) => {
+            let id = +params['id'];
+            this.produtoService.getProduto(id)
+                .then((produto) => this.produto = produto);
+            console.log(this.produto);
+        });
     }
 };
 ProdutoDetalheComponent = __decorate([
@@ -25,7 +34,8 @@ ProdutoDetalheComponent = __decorate([
         templateUrl: './produto-detalhe.component.html',
         styleUrls: ['./produto-detalhe.component.css']
     }),
-    __metadata("design:paramtypes", [produto_service_1.ProdutoService])
+    __metadata("design:paramtypes", [produto_service_1.ProdutoService,
+        router_1.ActivatedRoute])
 ], ProdutoDetalheComponent);
 exports.ProdutoDetalheComponent = ProdutoDetalheComponent;
 //# sourceMappingURL=produto-detalhe.component.js.map

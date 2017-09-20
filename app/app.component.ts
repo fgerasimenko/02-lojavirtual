@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnChanges, Output, SimpleChange, SimpleChanges} from '@angular/core';
+
+import { CarrinhoService } from './carrinho/carrinho.service';
 
 @Component({
     moduleId: module.id,
@@ -8,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent implements OnInit {
-    constructor() { }
+    qtdItens: number = this.carrinhoService.getQuantidade();
 
-    ngOnInit() { }
+    constructor(
+        private carrinhoService: CarrinhoService
+    ) { }
+
+    ngOnInit():void { 
+        
+    }    
 }

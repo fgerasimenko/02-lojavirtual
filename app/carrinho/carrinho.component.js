@@ -9,17 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require("@angular/core");
+const carrinho_service_1 = require("./carrinho.service");
 let CarrinhoComponent = class CarrinhoComponent {
-    constructor() { }
-    ngOnInit() { }
+    constructor(carrinhoService) {
+        this.carrinhoService = carrinhoService;
+    }
+    ngOnInit() {
+        this.carrinhoService.getCarrinho()
+            .then((carrinho) => {
+            this.carrinho = carrinho;
+            this.quantidade = carrinho.length;
+            console.log(this.quantidade);
+        })
+            .catch(err => console.log(err));
+    }
 };
 CarrinhoComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'carrinho',
-        templateUrl: './carrinho.component.html'
+        templateUrl: './carrinho.component.html',
+        styleUrls: ['./carrinho.component.css']
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [carrinho_service_1.CarrinhoService])
 ], CarrinhoComponent);
 exports.CarrinhoComponent = CarrinhoComponent;
 //# sourceMappingURL=carrinho.component.js.map

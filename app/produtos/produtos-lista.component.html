@@ -1,14 +1,20 @@
 <div class="container listar-produtos">
     <div class="row">
         <!-- CARDS DE PRODUTOS -->
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" *ngFor="let p of produtos" [routerLink]="['/produtos/detalhe', p.id]">
-            <div class="card">
-                <img class="card-img-top" src="{{p.imageUrl}}" alt="{{p.nome}}">
-                <div class="card-body">
-                    <h4 class="card-title">{{p.nome}}</h4>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" *ngFor="let p of produtos; let i =index">
+            <div class="card" >
+                <img class="card-img-top cursor-pointer" src="{{p.imageUrl}}" alt="{{p.nome}}" height="200px" [routerLink]="['/produtos/detalhe', p.id]">
+                <div [ngClass]="{'card-body':true, 'cursor-pointer':true}" [routerLink]="['/produtos/detalhe', p.id]">
+                    <h4 class="card-title ">{{p.nome}}</h4>
                     <p class="card-text">{{p.descShort}}</p>
                     <p><a>Ver mais...</a></p>
-                    <span><b>R$</b>{{p.preco}},<small>{{p.precoCentavos}}</small></span><button class="btn btn-primary"><i class="material-icons">shopping_cart</i></button>
+                </div>
+                <div class="card-footer">
+                    <span><b>R$</b>{{p.preco}},<small>{{p.precoCentavos}}</small></span>
+                    <button class="btn btn-primary cursor-pointer"
+                        (click)="onAdd(p)" >
+                        <i class="material-icons">shopping_cart</i>
+                    </button>
                 </div>
             </div>
         </div>

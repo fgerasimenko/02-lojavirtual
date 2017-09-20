@@ -4,25 +4,48 @@
     border-radius: 5px;
 }
 
-.card-body span{
+.card{
+    margin: 5px;
+}
+.card:hover{
+    border: 1px solid #888;
+}
+
+.card-title{
+    min-height: 105px;
+    max-height: 106px;
+    overflow: hidden;
+}
+
+.card-body p a{
+    color: #4682B4;
+}
+
+.card-footer span{
+    padding: 0px 30px;
     font-size: 30px;
     text-align: center;
 }
-.card-body span b{
+.card-footer span b{
     margin-right: 5px;
 }
 
-.card-body span small{
+.card-footer span small{
     font-size: 20px;
     margin-right: 10px;
     position: absolute;
-    bottom: 73px;
+    bottom: 66px;
 }
 
-.card-body .btn.btn-primary{
+.card-footer .btn.btn-primary{
     /* float: right; */
     width: 95%;
 }
-.card{
-    margin: 5px;
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.cursor-pointer:hover{
+    text-decoration: underline;
 }

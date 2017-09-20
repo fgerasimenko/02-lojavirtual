@@ -7,6 +7,11 @@ const appRoutes: Routes = [
         path: '', 
         redirectTo: '/produtos',
         pathMatch: 'full'
+    },
+    {
+        path: 'carrinho',
+        redirectTo: '/carrinho',
+        pathMatch: 'full'
     }
 ];
 

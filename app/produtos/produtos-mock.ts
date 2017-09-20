@@ -10,7 +10,7 @@ export const PRODUTOS: Produto[] = [
         categoria: 'Placas de vídeo',
         preco: 4299,
         precoCentavos: 99,
-        imageUrl: semImagem
+        imageUrl: 'app/produtos/media/img/gtx1080ti.png'
     },
     {
         id: 2,
@@ -20,7 +20,7 @@ export const PRODUTOS: Produto[] = [
         categoria: 'Placas de vídeo',
         preco: 1999,
         precoCentavos: 98,
-        imageUrl: semImagem
+        imageUrl: 'app/produtos/media/img/core-i9-xseries.jpg'
     },
     {
         id: 3,
@@ -30,6 +30,18 @@ export const PRODUTOS: Produto[] = [
         categoria: 'Placas Mãe',
         preco: 1249,
         precoCentavos: 90,
-        imageUrl: semImagem
+        imageUrl: 'app/produtos/media/img/x299pIntel.jpg'
+    },
+    {
+        id: 3,
+        nome: 'Memória Crucial Ballistix 8GB (2x4GB) DDR4-2400MHz',
+        desc: 'Memória RAM Crucial Ballistix 8GB (2x4GB) DDR4-2400MHz CL16 Vermelha',
+        descShort: 'Memória da hora',
+        categoria: 'Memória',
+        preco: 399,
+        precoCentavos: 49,
+        imageUrl: 'app/produtos/media/img/crucial-ballistix-ddr4-2x4gb.jpg'
     }
+
+    
 ]

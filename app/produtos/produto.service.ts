@@ -13,6 +13,6 @@ export class ProdutoService {
 
     getProduto(id: number): Promise<Produto>{
         return this.getProdutos()
-            .then(response => );
+            .then((produtos: Produto[]) => produtos.find(produto => produto.id == id));
     }
 }

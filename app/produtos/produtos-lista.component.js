@@ -10,9 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require("@angular/core");
 const produto_service_1 = require("./produto.service");
+const carrinho_service_1 = require("./../carrinho/carrinho.service");
 let ProdutosListaComponent = class ProdutosListaComponent {
-    constructor(produtoService) {
+    constructor(produtoService, carrinhoService) {
         this.produtoService = produtoService;
+        this.carrinhoService = carrinhoService;
     }
     ngOnInit() {
         this.produtoService.getProdutos()
@@ -20,6 +22,9 @@ let ProdutosListaComponent = class ProdutosListaComponent {
             this.produtos = produtos;
         })
             .catch(err => console.log(err));
+    }
+    onAdd(produto) {
+        this.carrinhoService.createCarrinho(produto);
     }
 };
 ProdutosListaComponent = __decorate([
@@ -29,7 +34,8 @@ ProdutosListaComponent = __decorate([
         templateUrl: './produtos-lista.component.html',
         styleUrls: ['./produtos-lista.component.css']
     }),
-    __metadata("design:paramtypes", [produto_service_1.ProdutoService])
+    __metadata("design:paramtypes", [produto_service_1.ProdutoService,
+        carrinho_service_1.CarrinhoService])
 ], ProdutosListaComponent);
 exports.ProdutosListaComponent = ProdutosListaComponent;
 //# sourceMappingURL=produtos-lista.component.js.map

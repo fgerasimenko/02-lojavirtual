@@ -7,27 +7,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 const core_1 = require("@angular/core");
 const router_1 = require("@angular/router");
-const appRoutes = [
-    {
-        path: '',
-        redirectTo: '/produtos',
-        pathMatch: 'full'
-    },
+const carrinho_component_1 = require("./carrinho.component");
+const carrinhoRoutes = [
     {
         path: 'carrinho',
-        redirectTo: '/carrinho',
-        pathMatch: 'full'
+        component: carrinho_component_1.CarrinhoComponent
     }
 ];
-let AppRoutingModule = class AppRoutingModule {
+let CarrinhoRoutingModule = class CarrinhoRoutingModule {
 };
-AppRoutingModule = __decorate([
+CarrinhoRoutingModule = __decorate([
     core_1.NgModule({
-        imports: [
-            router_1.RouterModule.forRoot(appRoutes)
-        ],
+        imports: [router_1.RouterModule.forChild(carrinhoRoutes)],
         exports: [router_1.RouterModule]
     })
-], AppRoutingModule);
-exports.AppRoutingModule = AppRoutingModule;
-//# sourceMappingURL=app-routing.module.js.map
+], CarrinhoRoutingModule);
+exports.CarrinhoRoutingModule = CarrinhoRoutingModule;
+//# sourceMappingURL=carrinho-routing.module.js.map

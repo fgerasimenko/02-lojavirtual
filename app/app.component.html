@@ -1,18 +1,17 @@
 <nav class="navbar sticky-top navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" routerLink="/produtos/detalhe">Loja</a>
+    <a class="navbar-brand" routerLink="/">Loja</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a class="nav-item nav-link active" routerLink="/">Principal <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" routerLink="/produtos/detalhe">Categorias</a>
+            <a class="nav-item nav-link" routerLink="/">Categorias</a>
         </div>
     </div>
-    <a class="nav-link">
-            <span id="qtdItens" class="badge badge-danger">1</span>
+    <a class="nav-link" routerLink="/carrinho">
+            <span id="qtdItens" class="badge badge-danger">{{qtdItens}}</span>
         <i class="material-icons">shopping_cart</i>
-        
     </a>
 </nav>
 <router-outlet></router-outlet>

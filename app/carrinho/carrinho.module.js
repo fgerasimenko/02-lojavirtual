@@ -8,14 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 const core_1 = require("@angular/core");
 const common_1 = require("@angular/common");
 const carrinho_component_1 = require("./carrinho.component");
+const carrinho_service_1 = require("./carrinho.service");
+const carrinho_routing_module_1 = require("./carrinho-routing.module");
+const produtos_module_1 = require("./../produtos/produtos.module");
 let CarrinhoModule = class CarrinhoModule {
 };
 CarrinhoModule = __decorate([
     core_1.NgModule({
         declarations: [carrinho_component_1.CarrinhoComponent],
-        imports: [common_1.CommonModule],
+        imports: [
+            produtos_module_1.ProdutosModule,
+            carrinho_routing_module_1.CarrinhoRoutingModule,
+            common_1.CommonModule
+        ],
         exports: [carrinho_component_1.CarrinhoComponent],
-        providers: [],
+        providers: [
+            carrinho_service_1.CarrinhoService
+        ],
     })
 ], CarrinhoModule);
 exports.CarrinhoModule = CarrinhoModule;
