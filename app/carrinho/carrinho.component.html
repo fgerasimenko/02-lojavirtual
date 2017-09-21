@@ -12,7 +12,7 @@
                 <th>Excluir</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody>  
             <tr *ngFor="let p of carrinho">
                 <td><img src="{{p.imageUrl}}" alt="{{p.nome}}" height="100px" width="100px"></td>
                 <td colspan="2">{{p.nome}}</td>
@@ -20,13 +20,39 @@
                 <td>{{p.nome}}</td>
                 <td>{{p.preco}}</td>
                 <td>
-                    <button type="button" class="btn btn-danger" aria-label="Close">
+                    <button type="button" class="btn btn-danger" aria-label="Close"
+                    (click)="onDelete(p)">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </td>
             </tr>
         </tbody>
     </table>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"></h4>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 justify-content-center">
+                        <div class="row justify-content-center">
+                            <span><b>R$</b>,<small></small></span>
+                        </div>      
+                    </div>
+                </div>
+                <input type="text" placeholder="Digite seu CEP"
+                [ngModel]="cep"
+                #Inputcep="ngModel">
+                <button class="btn btn-primary"
+                (click)="onCalcular(Inputcep.value)">
+                    Calcular
+                </button>
+                <div>
+                    {{frete}}
+                </div>
+                <button class="btn btn-primary"><i class="material-icons">shopping_cart</i></button>
+            </div>
+        </div>
     </div>
 </div>
 </div>

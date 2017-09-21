@@ -8,6 +8,10 @@ const carrinhoRoutes: Routes = [
     { 
         path: 'carrinho', 
         component: CarrinhoComponent 
+    },
+    {
+        path: 'carrinho/:id',
+        component: CarrinhoComponent
     }
 ];
 

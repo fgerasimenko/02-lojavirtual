@@ -23,7 +23,6 @@ let ProdutoDetalheComponent = class ProdutoDetalheComponent {
             let id = +params['id'];
             this.produtoService.getProduto(id)
                 .then((produto) => this.produto = produto);
-            console.log(this.produto);
         });
     }
 };

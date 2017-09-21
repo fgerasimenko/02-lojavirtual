@@ -33,7 +33,7 @@ export const PRODUTOS: Produto[] = [
         imageUrl: 'app/produtos/media/img/x299pIntel.jpg'
     },
     {
-        id: 3,
+        id: 4,
         nome: 'Memória Crucial Ballistix 8GB (2x4GB) DDR4-2400MHz',
         desc: 'Memória RAM Crucial Ballistix 8GB (2x4GB) DDR4-2400MHz CL16 Vermelha',
         descShort: 'Memória da hora',

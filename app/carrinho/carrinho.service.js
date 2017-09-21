@@ -11,11 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 const core_1 = require("@angular/core");
 const http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
+require("./../util/rxjs-extensions");
 const carrinho_mock_1 = require("./carrinho-mock");
 let CarrinhoService = class CarrinhoService {
     constructor(http) {
         this.http = http;
-        this.apiUrl = 'carrinho';
+        this.apiUrl = 'app/produto';
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
     getCarrinho() {
@@ -24,12 +25,27 @@ let CarrinhoService = class CarrinhoService {
     createCarrinho(produto) {
         carrinho_mock_1.CARRINHO.push(produto);
     }
-    getQuantidade() {
-        return carrinho_mock_1.CARRINHO.length;
+    deleteCarrinho(produto) {
+        const url = `${this.apiUrl}/${produto.id}`;
+        return this.http
+            .delete(url, { headers: this.headers })
+            .toPromise()
+            .then(() => produto)
+            .catch(this.handleError);
     }
     handleError(err) {
         console.log('Error:', err);
         return Promise.reject(err.message || err);
+    }
+    getFrete(cep) {
+        let retorno;
+        if (cep) {
+            retorno = 11.00;
+        }
+        else {
+            retorno = 0;
+        }
+        return retorno;
     }
 };
 CarrinhoService = __decorate([

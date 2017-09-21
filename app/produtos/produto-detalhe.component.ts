@@ -27,7 +27,6 @@ export class ProdutoDetalheComponent implements OnInit {
 
             this.produtoService.getProduto(id)
                 .then((produto: Produto) => this.produto = produto);
-            console.log(this.produto);
         })
     }
 }

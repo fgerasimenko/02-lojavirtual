@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { CarrinhoComponent } from './carrinho.component';
 import { CarrinhoService } from './carrinho.service';
@@ -13,7 +14,8 @@ import { ProdutosModule } from './../produtos/produtos.module';
     imports: [ 
         ProdutosModule,
         CarrinhoRoutingModule,
-        CommonModule 
+        CommonModule,
+        FormsModule 
     ],
     exports: [CarrinhoComponent],
     providers: [

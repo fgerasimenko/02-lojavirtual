@@ -13,17 +13,30 @@ const carrinho_service_1 = require("./carrinho.service");
 let CarrinhoComponent = class CarrinhoComponent {
     constructor(carrinhoService) {
         this.carrinhoService = carrinhoService;
+        this.cep = "00000-000";
     }
     ngOnInit() {
         this.carrinhoService.getCarrinho()
             .then((carrinho) => {
             this.carrinho = carrinho;
             this.quantidade = carrinho.length;
-            console.log(this.quantidade);
         })
             .catch(err => console.log(err));
     }
+    onCalcular(data) {
+        this.cep = data;
+        this.frete = this.carrinhoService.getFrete(data);
+    }
+    onDelete(produto) {
+        this.carrinhoService
+            .deleteCarrinho(produto)
+            .then(() => this.carrinho = this.carrinho.filter((p) => p.id != produto.id));
+    }
 };
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], CarrinhoComponent.prototype, "cep", void 0);
 CarrinhoComponent = __decorate([
     core_1.Component({
         moduleId: module.id,

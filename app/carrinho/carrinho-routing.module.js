@@ -12,6 +12,10 @@ const carrinhoRoutes = [
     {
         path: 'carrinho',
         component: carrinho_component_1.CarrinhoComponent
+    },
+    {
+        path: 'carrinho/:id',
+        component: carrinho_component_1.CarrinhoComponent
     }
 ];
 let CarrinhoRoutingModule = class CarrinhoRoutingModule {

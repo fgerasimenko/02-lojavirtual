@@ -9,12 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require("@angular/core");
-const carrinho_service_1 = require("./carrinho/carrinho.service");
 let AppComponent = class AppComponent {
-    constructor(carrinhoService) {
-        this.carrinhoService = carrinhoService;
-        this.qtdItens = this.carrinhoService.getQuantidade();
-    }
+    constructor() { }
     ngOnInit() {
     }
 };
@@ -25,7 +21,7 @@ AppComponent = __decorate([
         templateUrl: 'app.component.html',
         styleUrls: ['app.component.css']
     }),
-    __metadata("design:paramtypes", [carrinho_service_1.CarrinhoService])
+    __metadata("design:paramtypes", [])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

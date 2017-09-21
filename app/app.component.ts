@@ -1,6 +1,6 @@
-import { Component, OnInit,OnChanges, Output, SimpleChange, SimpleChanges} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { CarrinhoService } from './carrinho/carrinho.service';
+
 
 @Component({
     moduleId: module.id,
@@ -10,10 +10,10 @@ import { CarrinhoService } from './carrinho/carrinho.service';
 })
 
 export class AppComponent implements OnInit {
-    qtdItens: number = this.carrinhoService.getQuantidade();
+    
 
     constructor(
-        private carrinhoService: CarrinhoService
+        
     ) { }
 
     ngOnInit():void { 
