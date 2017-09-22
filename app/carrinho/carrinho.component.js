@@ -19,7 +19,6 @@ let CarrinhoComponent = class CarrinhoComponent {
         this.carrinhoService.getCarrinho()
             .then((carrinho) => {
             this.carrinho = carrinho;
-            this.quantidade = carrinho.length;
         })
             .catch(err => console.log(err));
     }

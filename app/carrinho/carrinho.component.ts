@@ -24,9 +24,8 @@ export class CarrinhoComponent implements OnInit {
 
     ngOnInit(): void {
         this.carrinhoService.getCarrinho()
-            .then((carrinho: Produto[])=>{
+            .then((carrinho)=>{
                 this.carrinho = carrinho;
-                this.quantidade = carrinho.length;
             })
             .catch(err => console.log(err));
         

@@ -12,18 +12,27 @@ const core_1 = require("@angular/core");
 const http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
 require("./../util/rxjs-extensions");
-const carrinho_mock_1 = require("./carrinho-mock");
 let CarrinhoService = class CarrinhoService {
     constructor(http) {
         this.http = http;
-        this.apiUrl = 'app/produto';
+        this.apiUrl = 'app/carrinho';
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
     getCarrinho() {
-        return Promise.resolve(carrinho_mock_1.CARRINHO);
+        return this.http.get(this.apiUrl)
+            .toPromise()
+            .then(response => response.json().data)
+            .catch(this.handleError);
     }
     createCarrinho(produto) {
-        carrinho_mock_1.CARRINHO.push(produto);
+        return this.http
+            .post(this.apiUrl, JSON.stringify(produto), { headers: this.headers })
+            .toPromise()
+            .then((response) => response.json().data);
+    }
+    find(id) {
+        return this.getCarrinho()
+            .then((carrinho) => carrinho.find(produto => produto.id === id));
     }
     deleteCarrinho(produto) {
         const url = `${this.apiUrl}/${produto.id}`;

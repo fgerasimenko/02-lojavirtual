@@ -11,21 +11,34 @@ import { CARRINHO } from './carrinho-mock';
 @Injectable()
 
 export class CarrinhoService {
-    private apiUrl: string ='app/produto';
-    private
+    private apiUrl: string ='app/carrinho';
     private headers: Headers = new Headers({'Content-Type': 'application/json'});
     constructor(
         private http: Http
     ){}
 
     getCarrinho(): Promise<Produto[]>{
-        return Promise.resolve(CARRINHO)
+        
+        return this.http.get(this.apiUrl)
+        .toPromise()
+        .then(response =>response.json().data as Produto[])
+        .catch(this.handleError);
+        
     }
 
-    createCarrinho(produto: Produto): void
+    createCarrinho(produto: Produto): Promise<Produto>
     {
-        CARRINHO.push(produto);
+        return this.http
+            .post(this.apiUrl, JSON.stringify(produto), {headers: this.headers})
+            .toPromise()
+            .then((response: Response) => response.json().data as Produto)
     }
+
+   find(id: number): Promise<Produto>
+   {
+    return this.getCarrinho()
+    .then((carrinho: Produto[]) => carrinho.find(produto => produto.id === id));
+   }
 
     deleteCarrinho(produto: Produto): Promise<Produto>
     {
