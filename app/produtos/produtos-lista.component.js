@@ -15,6 +15,7 @@ let ProdutosListaComponent = class ProdutosListaComponent {
     constructor(produtoService, carrinhoService) {
         this.produtoService = produtoService;
         this.carrinhoService = carrinhoService;
+        this.isNew = true;
     }
     ngOnInit() {
         this.produtoService.getProdutos()
@@ -23,8 +24,18 @@ let ProdutosListaComponent = class ProdutosListaComponent {
         })
             .catch(err => console.log(err));
     }
-    onAdd(produto) {
-        this.carrinhoService.createCarrinho(produto);
+    onAdd(produto, qtd) {
+        //this.carrinhoService.addOrUpdate(id);
+        let promise = this.carrinhoService.findProduto(produto.id).then(car => car.id === produto.id);
+        if (promise) {
+            //this.carrinhoService.create(produto,qtd);
+            console.log(promise);
+        }
+        else {
+            //this.carrinhoService.update(produto, qtd);
+            console.log('nlog');
+        }
+        //let prod = this.carrinhoService.create(produto,qtd);     
     }
 };
 ProdutosListaComponent = __decorate([

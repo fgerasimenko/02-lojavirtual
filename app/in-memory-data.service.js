@@ -10,7 +10,8 @@ class InMemoryDataService {
                 categoria: 'Placas de vídeo',
                 preco: 4299,
                 precoCentavos: 99,
-                imageUrl: 'app/produtos/media/img/gtx1080ti.png'
+                imageUrl: 'app/produtos/media/img/gtx1080ti.png',
+                quantidade: 10
             },
             {
                 id: 2,
@@ -20,7 +21,8 @@ class InMemoryDataService {
                 categoria: 'Placas de vídeo',
                 preco: 1999,
                 precoCentavos: 98,
-                imageUrl: 'app/produtos/media/img/core-i9-xseries.jpg'
+                imageUrl: 'app/produtos/media/img/core-i9-xseries.jpg',
+                quantidade: 10
             },
             {
                 id: 3,
@@ -30,7 +32,8 @@ class InMemoryDataService {
                 categoria: 'Placas Mãe',
                 preco: 1249,
                 precoCentavos: 90,
-                imageUrl: 'app/produtos/media/img/x299pIntel.jpg'
+                imageUrl: 'app/produtos/media/img/x299pIntel.jpg',
+                quantidade: 10
             },
             {
                 id: 4,
@@ -40,7 +43,8 @@ class InMemoryDataService {
                 categoria: 'Memória',
                 preco: 399,
                 precoCentavos: 49,
-                imageUrl: 'app/produtos/media/img/crucial-ballistix-ddr4-2x4gb.jpg'
+                imageUrl: 'app/produtos/media/img/crucial-ballistix-ddr4-2x4gb.jpg',
+                quantidade: 10
             }
         ];
         let carrinho = [{
@@ -51,7 +55,8 @@ class InMemoryDataService {
                 categoria: 'Placas de vídeo',
                 preco: 4299,
                 precoCentavos: 99,
-                imageUrl: 'app/produtos/media/img/gtx1080ti.png'
+                imageUrl: 'app/produtos/media/img/gtx1080ti.png',
+                quantidade: 1
             },
             {
                 id: 4,
@@ -61,7 +66,8 @@ class InMemoryDataService {
                 categoria: 'Memória',
                 preco: 399,
                 precoCentavos: 49,
-                imageUrl: 'app/produtos/media/img/crucial-ballistix-ddr4-2x4gb.jpg'
+                imageUrl: 'app/produtos/media/img/crucial-ballistix-ddr4-2x4gb.jpg',
+                quantidade: 2
             }];
         return { produtos, carrinho };
     }

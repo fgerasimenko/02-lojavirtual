@@ -1,6 +1,7 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 import { Produto } from './produtos/produto.model';
+import { ProdutoCarrinho } from './carrinho/produtoCarrinho.model';
 import { Carrinho } from './carrinho/carrinho.model';
 
 export class InMemoryDataService implements InMemoryDbService{
@@ -15,7 +16,8 @@ export class InMemoryDataService implements InMemoryDbService{
                 categoria: 'Placas de vídeo',
                 preco: 4299,
                 precoCentavos: 99,
-                imageUrl: 'app/produtos/media/img/gtx1080ti.png'
+                imageUrl: 'app/produtos/media/img/gtx1080ti.png',
+                quantidade: 10
             },
             {
                 id: 2,
@@ -25,7 +27,8 @@ export class InMemoryDataService implements InMemoryDbService{
                 categoria: 'Placas de vídeo',
                 preco: 1999,
                 precoCentavos: 98,
-                imageUrl: 'app/produtos/media/img/core-i9-xseries.jpg'
+                imageUrl: 'app/produtos/media/img/core-i9-xseries.jpg',
+                quantidade: 10
             },
             {
                 id: 3,
@@ -35,7 +38,8 @@ export class InMemoryDataService implements InMemoryDbService{
                 categoria: 'Placas Mãe',
                 preco: 1249,
                 precoCentavos: 90,
-                imageUrl: 'app/produtos/media/img/x299pIntel.jpg'
+                imageUrl: 'app/produtos/media/img/x299pIntel.jpg',
+                quantidade: 10
             },
             {
                 id: 4,
@@ -45,11 +49,12 @@ export class InMemoryDataService implements InMemoryDbService{
                 categoria: 'Memória',
                 preco: 399,
                 precoCentavos: 49,
-                imageUrl: 'app/produtos/media/img/crucial-ballistix-ddr4-2x4gb.jpg'
+                imageUrl: 'app/produtos/media/img/crucial-ballistix-ddr4-2x4gb.jpg',
+                quantidade: 10
             }
         ];
 
-        let carrinho: Produto[] =
+        let carrinho: ProdutoCarrinho[] =
             [{
                 id: 1,
                 nome: 'Placa de Vídeo GTX1080ti',
@@ -58,7 +63,8 @@ export class InMemoryDataService implements InMemoryDbService{
                 categoria: 'Placas de vídeo',
                 preco: 4299,
                 precoCentavos: 99,
-                imageUrl: 'app/produtos/media/img/gtx1080ti.png'
+                imageUrl: 'app/produtos/media/img/gtx1080ti.png',
+                quantidade: 1
             },
             {
                 id: 4,
@@ -68,7 +74,8 @@ export class InMemoryDataService implements InMemoryDbService{
                 categoria: 'Memória',
                 preco: 399,
                 precoCentavos: 49,
-                imageUrl: 'app/produtos/media/img/crucial-ballistix-ddr4-2x4gb.jpg'
+                imageUrl: 'app/produtos/media/img/crucial-ballistix-ddr4-2x4gb.jpg',
+                quantidade: 2
             }];
         return {produtos, carrinho};
     }

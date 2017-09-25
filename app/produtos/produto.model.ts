@@ -7,6 +7,7 @@ export class Produto{
         public categoria: string,
         public preco: number,
         public precoCentavos: number,
-        public imageUrl: string
+        public imageUrl: string,
+        public quantidade: number
     ){}
 }

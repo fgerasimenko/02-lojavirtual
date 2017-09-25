@@ -11,7 +11,7 @@ const carrinhoRoutes: Routes = [
     },
     {
         path: 'carrinho/:id',
-        component: CarrinhoComponent
+        redirectTo: 'carrinho'
     }
 ];
 

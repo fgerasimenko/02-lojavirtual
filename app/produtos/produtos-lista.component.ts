@@ -16,6 +16,7 @@ export class ProdutosListaComponent implements OnInit {
 
     produtos: Produto[];
     produto: Produto;
+    private isNew = true;
     
     constructor(
         private produtoService: ProdutoService,
@@ -30,8 +31,22 @@ export class ProdutosListaComponent implements OnInit {
             .catch(err => console.log(err));
      }
 
-     onAdd(produto: Produto): void{
-         this.carrinhoService.createCarrinho(produto);
-         
+     onAdd(produto: Produto,qtd: number): void{
+        //this.carrinhoService.addOrUpdate(id);
+        let promise = this.carrinhoService.findProduto(produto.id).then(car => car.id === produto.id)
+                        
+                        
+
+        if(promise)
+        {
+            //this.carrinhoService.create(produto,qtd);
+            console.log(promise)
+        }else{
+            //this.carrinhoService.update(produto, qtd);
+            console.log('nlog');
+        }
+
+        
+        //let prod = this.carrinhoService.create(produto,qtd);     
      }
 }

@@ -24,15 +24,32 @@ let CarrinhoService = class CarrinhoService {
             .then(response => response.json().data)
             .catch(this.handleError);
     }
-    createCarrinho(produto) {
+    create(produto, qtd) {
         return this.http
             .post(this.apiUrl, JSON.stringify(produto), { headers: this.headers })
             .toPromise()
-            .then((response) => response.json().data);
+            .then((response) => response.json().data)
+            .catch(this.handleError);
     }
-    find(id) {
-        return this.getCarrinho()
-            .then((carrinho) => carrinho.find(produto => produto.id === id));
+    update(produto, qtd) {
+        const url = `${this.apiUrl}/${produto.id}`;
+        // Pegar o produto no carrinho
+        let p = this.http.get(url)
+            .toPromise()
+            .then(response => response.json().data);
+        console.log(produto + ' ' + qtd);
+        //Atualizar
+        // app/carrinho/:id
+        return this.http
+            .put(url, JSON.stringify(produto), { headers: this.headers })
+            .toPromise()
+            .then(() => produto)
+            .catch(this.handleError);
+    }
+    findProduto(id) {
+        return this.http.get(this.apiUrl)
+            .toPromise()
+            .then(resp => resp.json().data);
     }
     deleteCarrinho(produto) {
         const url = `${this.apiUrl}/${produto.id}`;

@@ -12,7 +12,8 @@
                 <div class="card-footer">
                     <span><b>R$</b>{{p.preco}},<small>{{p.precoCentavos}}</small></span>
                     <button class="btn btn-primary cursor-pointer"
-                        (click)="onAdd(p)" >
+                        [routerLink]="['/carrinho', p.id]"
+                        (click)="onAdd(p,1)" >
                         <i class="material-icons">shopping_cart</i>
                     </button>
                 </div>

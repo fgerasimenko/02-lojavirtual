@@ -5,7 +5,8 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/toPromise';
 import './../util/rxjs-extensions';
 
-import { Produto } from './../produtos/produto.model';
+
+import { ProdutoCarrinho } from './produtoCarrinho.model';
 import { CARRINHO } from './carrinho-mock';
 
 @Injectable()
@@ -17,37 +18,62 @@ export class CarrinhoService {
         private http: Http
     ){}
 
-    getCarrinho(): Promise<Produto[]>{
-        
+    getCarrinho(): Promise<ProdutoCarrinho[]>{
+
         return this.http.get(this.apiUrl)
         .toPromise()
-        .then(response =>response.json().data as Produto[])
+        .then(response => response.json().data as ProdutoCarrinho[])
         .catch(this.handleError);
         
     }
 
-    createCarrinho(produto: Produto): Promise<Produto>
+    create(produto: ProdutoCarrinho,qtd: number): Promise<ProdutoCarrinho>
     {
         return this.http
-            .post(this.apiUrl, JSON.stringify(produto), {headers: this.headers})
-            .toPromise()
-            .then((response: Response) => response.json().data as Produto)
+        .post(this.apiUrl, JSON.stringify(produto), {headers: this.headers})
+        .toPromise()
+        .then((response: Response) => response.json().data as ProdutoCarrinho)
+        .catch(this.handleError);
+        
     }
 
-   find(id: number): Promise<Produto>
-   {
-    return this.getCarrinho()
-    .then((carrinho: Produto[]) => carrinho.find(produto => produto.id === id));
-   }
+    update(produto: ProdutoCarrinho, qtd: number): Promise<ProdutoCarrinho>
+    {
+        const url = `${this.apiUrl}/${produto.id}`
 
-    deleteCarrinho(produto: Produto): Promise<Produto>
+        // Pegar o produto no carrinho
+        let p = this.http.get(url)
+        .toPromise()
+        .then(response => response.json().data as ProdutoCarrinho)
+
+        console.log(produto+' '+qtd)
+
+        //Atualizar
+         // app/carrinho/:id
+        return this.http
+            .put(url, JSON.stringify(produto), {headers: this.headers})
+            .toPromise()
+            .then(() => produto as ProdutoCarrinho)
+            .catch(this.handleError);
+
+    }
+
+    findProduto(id: number): Promise<ProdutoCarrinho>
+    {
+
+        return this.http.get(this.apiUrl)
+        .toPromise()
+        .then(resp => resp.json().data as ProdutoCarrinho)
+    }
+
+    deleteCarrinho(produto: ProdutoCarrinho): Promise<ProdutoCarrinho>
     {
         const url = `${this.apiUrl}/${produto.id}`
         
         return this.http
             .delete(url, {headers: this.headers})
             .toPromise()
-            .then(() => produto as Produto)
+            .then(() => produto as ProdutoCarrinho)
             .catch(this.handleError);
 
     }

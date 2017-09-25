@@ -10,13 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require("@angular/core");
 const router_1 = require("@angular/router");
-const produto_model_1 = require("./produto.model");
 const produto_service_1 = require("./produto.service");
 let ProdutoDetalheComponent = class ProdutoDetalheComponent {
     constructor(produtoService, route) {
         this.produtoService = produtoService;
         this.route = route;
-        this.produto = new produto_model_1.Produto(0, '', '', '', '', 0, 0, '');
     }
     ngOnInit() {
         this.route.params.forEach((params) => {

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { ProdutosListaComponent } from './produtos-lista.component';
 import { ProdutoDetalheComponent } from './produto-detalhe.component';
+import { CarrinhoComponent } from './../carrinho/carrinho.component';
 
 const produtoRoutes: Routes = [
     { 
@@ -16,6 +17,10 @@ const produtoRoutes: Routes = [
     { 
         path: 'produtos/detalhe/:id', 
         component: ProdutoDetalheComponent 
+    },
+    {
+        path: 'produtos/carrinho',
+        redirectTo: 'carrinho'
     }
 ];
 

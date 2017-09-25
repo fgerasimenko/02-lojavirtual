@@ -1,6 +1,6 @@
 "use strict";
 class Produto {
-    constructor(id, nome, desc, descShort, categoria, preco, precoCentavos, imageUrl) {
+    constructor(id, nome, desc, descShort, categoria, preco, precoCentavos, imageUrl, quantidade) {
         this.id = id;
         this.nome = nome;
         this.desc = desc;
@@ -9,6 +9,7 @@ class Produto {
         this.preco = preco;
         this.precoCentavos = precoCentavos;
         this.imageUrl = imageUrl;
+        this.quantidade = quantidade;
     }
 }
 exports.Produto = Produto;

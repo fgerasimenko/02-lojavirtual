@@ -7,6 +7,7 @@ exports.CARRINHO = [{
         categoria: 'Placas de vídeo',
         preco: 4299,
         precoCentavos: 99,
-        imageUrl: 'app/produtos/media/img/gtx1080ti.png'
+        imageUrl: 'app/produtos/media/img/gtx1080ti.png',
+        quantidade: 1
     }];
 //# sourceMappingURL=carrinho-mock.js.map

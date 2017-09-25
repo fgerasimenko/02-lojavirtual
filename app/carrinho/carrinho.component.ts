@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
 import { Produto } from './../produtos/produto.model';
+import { ProdutoCarrinho } from './produtoCarrinho.model';
 import { CarrinhoService } from './carrinho.service';
 
 @Component({
@@ -14,9 +15,10 @@ import { CarrinhoService } from './carrinho.service';
 })
 export class CarrinhoComponent implements OnInit {
     @Input() cep: string ="00000-000";
-    carrinho: Produto[];
+    carrinho: ProdutoCarrinho[];
     frete: number;
-    quantidade: number
+    quantidade: number;
+
     constructor(
         private carrinhoService: CarrinhoService
     ) { }
@@ -37,7 +39,7 @@ export class CarrinhoComponent implements OnInit {
         this.frete = this.carrinhoService.getFrete(data);
      }
 
-    onDelete(produto: Produto): void
+    onDelete(produto: ProdutoCarrinho): void
     {
         this.carrinhoService
             .deleteCarrinho(produto)

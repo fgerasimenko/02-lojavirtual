@@ -21,6 +21,10 @@ const produtoRoutes = [
     {
         path: 'produtos/detalhe/:id',
         component: produto_detalhe_component_1.ProdutoDetalheComponent
+    },
+    {
+        path: 'produtos/carrinho',
+        redirectTo: 'carrinho'
     }
 ];
 let ProdutoRoutingModule = class ProdutoRoutingModule {
